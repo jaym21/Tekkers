@@ -10,9 +10,10 @@ java {
 }
 
 dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
     //retrofit and moshi converter
     def retrofit = "2.9.0"
-    def moshi = "1.12.0"
+    def moshi = '1.13.0'
     api "com.squareup.retrofit2:retrofit:$retrofit"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit"
     implementation "com.squareup.moshi:moshi:$moshi"
