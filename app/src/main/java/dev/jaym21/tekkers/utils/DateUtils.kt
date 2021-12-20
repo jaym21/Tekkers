@@ -5,9 +5,9 @@ import java.util.*
 
 class DateUtils {
 
-    fun convertUnixToDate(timestamp: Long): String {
-        val sdf = SimpleDateFormat("yyyy/MM/dd", Locale.ENGLISH)
+    fun convertCurrentTimeMillisToDate(timestamp: Long): String {
+        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
         sdf.timeZone = TimeZone.getTimeZone("IST")
-        return sdf.format(timestamp * 1000)
+        return sdf.format(timestamp)
     }
 }
