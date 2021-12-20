@@ -10,4 +10,10 @@ class DateUtilsTest {
         val date = DateUtils().convertCurrentTimeMillisToDate(System.currentTimeMillis())
         assertNotNull(date)
     }
+
+    @Test
+    fun `Get unix timestamp from date`() {
+        val timestamp = DateUtils().getTimestampFromDate("2021-12-20")
+        assertNotNull(timestamp)
+    }
 }
