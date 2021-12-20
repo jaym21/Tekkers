@@ -16,4 +16,13 @@ class DateUtilsTest {
         val timestamp = DateUtils().getTimestampFromDate("2021-12-20")
         assertNotNull(timestamp)
     }
+
+    @Test
+    fun `Get day of the week from timestamp`() {
+        val dayOfWeek = DateUtils().getDayOfWeek(System.currentTimeMillis())
+        val day = dayOfWeek.substring(0,3)
+        val timestamp = "2021-12-20"
+        val time = timestamp.substring(8)
+        assertNotNull(dayOfWeek)
+    }
 }
