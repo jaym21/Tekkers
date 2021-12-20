@@ -1,4 +1,4 @@
-package dev.jaym21.tekkers
+package dev.jaym21.tekkers.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

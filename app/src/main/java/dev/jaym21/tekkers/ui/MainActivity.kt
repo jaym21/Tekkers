@@ -1,10 +1,11 @@
-package dev.jaym21.tekkers
+package dev.jaym21.tekkers.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dev.jaym21.tekkers.R
 import dev.jaym21.tekkers.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
