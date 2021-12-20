@@ -10,7 +10,6 @@ java {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
     //retrofit and moshi converter
     def retrofit = "2.9.0"
     def moshi = '1.13.0'
