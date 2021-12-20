@@ -3,21 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.FixturesFragment">
 
     <TextView
         android:id="@+id/tvMonth"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="December"
         android:textSize="15sp"
-        android:textColor="@color/black_alpha_80"
-        android:fontFamily="@font/opensans_semibold" />
+        android:textColor="@color/black"
+        android:fontFamily="@font/opensans_semibold"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"/>
 
-    <TableLayout
-        android:id="@+id/tabLayoutDays"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDates"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvMonth" />
+        android:layout_below="@id/tvMonth"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFixtures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rvDates"
+        android:layout_marginTop="10dp"/>
 
 </RelativeLayout>
