@@ -19,4 +19,9 @@ class DateUtils {
         val time = d?.time
         return time?.let { Timestamp(it).time }
     }
+
+    fun getDayOfWeek(timestamp: Long): String {
+        val sdf = SimpleDateFormat("EEEE", Locale.ENGLISH)
+        return sdf.format(timestamp)
+    }
 }
