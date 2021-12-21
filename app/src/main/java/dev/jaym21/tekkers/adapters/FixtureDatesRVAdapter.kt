@@ -3,7 +3,9 @@ package dev.jaym21.tekkers.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import dev.jaym21.tekkers.R
 import dev.jaym21.tekkers.utils.DateUtils
@@ -24,6 +26,12 @@ class FixtureDatesRVAdapter(private val dates: List<Long>): RecyclerView.Adapter
         holder.date.text = DateUtils().convertTimeMillisToDate(currentItem).substring(8)
         val dayOfWeek = DateUtils().getDayOfWeek(currentItem).substring(0,3)
         holder.day.text = dayOfWeek
+
+        if (position == 10) {
+            holder.date.background = ContextCompat.getDrawable(holder.itemView.context, R.drawable.date_tab_selected_bg)
+            holder.date.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.white))
+            holder.day.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.purple_500))
+        }
     }
 
     override fun getItemCount(): Int {

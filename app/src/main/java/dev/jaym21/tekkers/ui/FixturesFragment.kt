@@ -33,6 +33,8 @@ class FixturesFragment : Fragment() {
         fixtureDatesAdapter = FixtureDatesRVAdapter(fixtureDates.toList())
 
         setUpFixtureDatesRV()
+
+        binding?.rvDates?.layoutManager?.scrollToPosition(10)
     }
 
     private fun setUpFixtureDatesRV() {
