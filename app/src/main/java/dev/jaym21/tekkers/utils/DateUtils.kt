@@ -28,10 +28,10 @@ class DateUtils {
         return sdf.format(timestamp)
     }
 
-    fun getTimestampsOfDatesForFixtures(): ArrayList<Long?> {
+    fun getTimestampsOfDatesForFixtures(): ArrayList<Long> {
 
         val currentTimestamp = System.currentTimeMillis()
-        val fixtureDates = arrayListOf<Long?>()
+        val fixtureDates = arrayListOf<Long>()
 
         for (i in 10 downTo 1) {
             fixtureDates.add(removeDaysFromTimestamp(i, currentTimestamp))
