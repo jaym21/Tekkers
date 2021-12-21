@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.jaym21.tekkers.R
 import dev.jaym21.tekkers.utils.DateUtils
 
-class FixtureDatesRVAdapter(private val dates: List<String>): RecyclerView.Adapter<FixtureDatesRVAdapter.FixtureDatesViewHolder>() {
+class FixtureDatesRVAdapter(private val dates: List<Long>): RecyclerView.Adapter<FixtureDatesRVAdapter.FixtureDatesViewHolder>() {
 
     inner class FixtureDatesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val date: TextView = itemView.findViewById(R.id.tvDate)
@@ -21,12 +21,9 @@ class FixtureDatesRVAdapter(private val dates: List<String>): RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: FixtureDatesViewHolder, position: Int) {
         val currentItem = dates[position]
-        holder.date.text = currentItem.substring(8)
-        val timestampFromDate = DateUtils().getTimestampFromDate(currentItem)
-        if (timestampFromDate != null) {
-            val dayOfWeek = DateUtils().getDayOfWeek(timestampFromDate).substring(0,3)
-            holder.day.text = dayOfWeek
-        }
+        holder.date.text = DateUtils().convertTimeMillisToDate(currentItem).substring(8)
+        val dayOfWeek = DateUtils().getDayOfWeek(currentItem).substring(0,3)
+        holder.day.text = dayOfWeek
     }
 
     override fun getItemCount(): Int {
