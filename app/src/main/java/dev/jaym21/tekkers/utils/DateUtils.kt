@@ -28,17 +28,17 @@ class DateUtils {
         return sdf.format(timestamp)
     }
 
-    fun getTimestampsOfDatesForFixtures(): ArrayList<String?> {
+    fun getTimestampsOfDatesForFixtures(): ArrayList<Long?> {
 
         val currentTimestamp = System.currentTimeMillis()
-        val fixtureDates = arrayListOf<String?>()
+        val fixtureDates = arrayListOf<Long?>()
 
         for (i in 10 downTo 1) {
-            fixtureDates.add(DateUtils().convertTimeMillisToDate(removeDaysFromTimestamp(i, currentTimestamp)))
+            fixtureDates.add(removeDaysFromTimestamp(i, currentTimestamp))
         }
-        fixtureDates.add(DateUtils().convertTimeMillisToDate(currentTimestamp))
+        fixtureDates.add(currentTimestamp)
         for (i in 1..24) {
-            fixtureDates.add(DateUtils().convertTimeMillisToDate(addDaysToTimestamp(i, currentTimestamp)))
+            fixtureDates.add(addDaysToTimestamp(i, currentTimestamp))
         }
 
         return fixtureDates
